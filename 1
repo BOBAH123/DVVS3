@@ -1,0 +1,42 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace matrixKr
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Enter size of matrix: ");
+            int[,] matrix = new int[Convert.ToInt32(Console.ReadLine()), Convert.ToInt32(Console.ReadLine())];
+            int sizeN = matrix.GetLength(0);
+            int sizeM = matrix.GetLength(1);
+            for (int i = 0; i < sizeN; i++)
+            {
+                for (int j = 0; j < sizeM; j++)
+                {
+                    Console.Write("A[{0},{1}]: ", i, j);
+                    matrix[i, j] = Convert.ToInt32(Console.ReadLine());
+                }
+            }
+            Console.WriteLine("\nMatrix");
+            Print(matrix);
+            Console.ReadKey();
+
+        }
+        static void Print(int[,] a)
+        {
+            for (int i = 0; i < a.GetLength(0); i++)
+            {
+                for (int j = 0; j < a.GetLength(1); j++)
+                {
+                    Console.Write("{0} ", a[i, j]);
+                }
+                Console.WriteLine();
+            }
+        }
+    }
+}
